@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # readme
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -32,3 +33,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+=======
+# Stance
+tance is an AI-powered interactive platform featuring voice-based Q&amp;A, webcam recording, performance analytics, and an adaptive AI tutor for personalized learning.
+>>>>>>> e3461239646e5387e3ac0a237f2984b5b47c9d2f

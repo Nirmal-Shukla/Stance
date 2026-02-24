@@ -23,10 +23,7 @@ const {
    export const chatSession = model.startChat({
       generationConfig,
   
-   // safetySettings: Adjust safety settings
-   // See https://ai.google.dev/gemini-api/docs/safety-settings
-
-   // add keys in env file
+   
      
     });
   

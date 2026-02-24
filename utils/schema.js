@@ -22,7 +22,6 @@ export const UserAnswer = pgTable('userAnswer', {
     userEmail: varchar('userEmail'),
     createdAt: varchar('createdAt'),
 
-    // --- NEW COLUMNS ADDED HERE ---
     fillerWordCount: integer('filler_word_count'),
     speakingPace: integer('speaking_pace'),
     sentiment: varchar('sentiment'),

@@ -1,5 +1,5 @@
 import { db } from "@/utils/db";
-import { Stance, UserAnswer } from "@/utils/schema";
+import { PrepGenie, UserAnswer } from "@/utils/schema";
 import { eq } from "drizzle-orm";
 import { NextResponse } from "next/server";
 
@@ -16,8 +16,8 @@ export async function DELETE(request, { params }) {
       .where(eq(UserAnswer.mockIdRef, interviewId));
 
     // Delete the main interview record
-    await db.delete(Stance)
-      .where(eq(Stance.mockId, interviewId));
+    await db.delete(PrepGenie)
+      .where(eq(PrepGenie.mockId, interviewId));
 
     return NextResponse.json({ success: true, message: "Interview deleted successfully" });
 

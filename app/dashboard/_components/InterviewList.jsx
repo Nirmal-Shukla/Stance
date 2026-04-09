@@ -1,7 +1,7 @@
 "use client"
 
 import { db } from '@/utils/db';
-import { Stance } from '@/utils/schema';
+import { PrepGenie } from '@/utils/schema';
 import { useUser } from '@clerk/nextjs'
 import { desc, eq } from 'drizzle-orm';
 import React, { useEffect, useState } from 'react'
@@ -19,9 +19,9 @@ function InterviewList() {
 
     const GetInterviewList = async()=>{
         const result = await db.select()
-        .from(Stance)
-        .where(eq(Stance.createdBy,user?.primaryEmailAddress?.emailAddress))
-        .orderBy(desc(Stance.id))
+        .from(PrepGenie)
+        .where(eq(PrepGenie.createdBy,user?.primaryEmailAddress?.emailAddress))
+        .orderBy(desc(PrepGenie.id))
 
         console.log(result);
         setInterviewList(result);

@@ -1,6 +1,6 @@
 import { pgTable, serial, text, varchar, integer } from "drizzle-orm/pg-core";
 
-export const Stance = pgTable('prepGenie', {
+export const PrepGenie = pgTable('prepGenie', {
     id: serial('id').primaryKey(),
     jsonMockResp: text('jsonMockResp').notNull(),
     jobPosition: varchar('jobPosition').notNull(),

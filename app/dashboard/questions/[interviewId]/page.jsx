@@ -1,6 +1,6 @@
 "use client";
 import { db } from '@/utils/db';
-import { Stance } from '@/utils/schema';
+import { PrepGenie} from '@/utils/schema';
 import { eq } from 'drizzle-orm';
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
@@ -21,8 +21,8 @@ function InterviewQuestionsPage({ params }) {
     const getInterviewDetails = async () => {
         setLoading(true);
         const result = await db.select()
-            .from(Stance)
-            .where(eq(Stance.mockId, params.interviewId));
+            .from(PrepGenie)
+            .where(eq(PrepGenie.mockId, params.interviewId));
 
         if (result.length > 0) {
             const interview = {

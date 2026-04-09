@@ -175,8 +175,18 @@ export async function POST(request) {
       sentiment: jsonFeedbackResponse.sentiment,
     });
 
-    return NextResponse.json({ success: true }, { status: 201 });
+    // return NextResponse.json({ success: true }, { status: 201 });
 
+
+    // Isko:
+    // return NextResponse.json({ success: true }, { status: 201 });
+
+    // Isse replace karein:
+    const resp = await db.insert(UserAnswer).values({
+      // ... aapki saari values
+    }).returning({ mockIdRef: UserAnswer.mockIdRef }); // Returning add karein
+
+    return NextResponse.json({ success: true, response: resp }, { status: 201 });
   } catch (error) {
     console.error("Error generating feedback:", error);
     return NextResponse.json(

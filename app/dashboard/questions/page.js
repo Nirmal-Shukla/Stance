@@ -1,6 +1,6 @@
 "use client";
 import { db } from '@/utils/db';
-import { Stance } from '@/utils/schema';
+import { PrepGenie } from '@/utils/schema';
 import { useUser } from '@clerk/nextjs';
 import { eq } from 'drizzle-orm';
 import React, { useEffect, useState } from 'react';
@@ -34,9 +34,9 @@ function QuestionsListPage() {
     const getSavedInterviews = async () => {
         setLoading(true);
         const results = await db.select()
-            .from(Stance)
-            .where(eq(Stance.createdBy, user.primaryEmailAddress.emailAddress))
-            .orderBy(Stance.id);
+            .from(PrepGenie)
+            .where(eq(PrepGenie.createdBy, user.primaryEmailAddress.emailAddress))
+            .orderBy(PrepGenie.id);
         
         setInterviewList(results);
         setLoading(false);

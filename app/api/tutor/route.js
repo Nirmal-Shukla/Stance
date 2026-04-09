@@ -15,7 +15,7 @@ export async function POST(request) {
 
     // --- NEW, MORE SPECIFIC PROMPT ---
     const prompt = `
-      You are "Stance", a helpful and knowledgeable AI assistant. Your tone should be natural, friendly, and conversational.
+      You are "", a helpful and knowledgeable AI assistant. Your tone should be natural, friendly, and conversational.
       A user has asked: "${question}".
 
       **Your Task:**

@@ -2,7 +2,7 @@
 
 // import { Button } from "@/components/ui/button";
 // import { db } from "@/utils/db";
-// import { Stance } from "@/utils/schema";
+// import {  } from "@/utils/schema";
 // import { eq } from "drizzle-orm";
 // import { Lightbulb, WebcamIcon } from "lucide-react";
 // import Link from "next/link";
@@ -31,8 +31,8 @@
 //     try {
 //       const result = await db
 //         .select()
-//         .from(Stance)
-//         .where(eq(Stance.mockId, interviewId));
+//         .from()
+//         .where(eq(.mockId, interviewId));
 
 //       console.log("Fetch result:", result);
 
@@ -135,7 +135,7 @@
 
 import { Button } from "@/components/ui/button";
 import { db } from "@/utils/db";
-import { Stance } from "@/utils/schema"; // Using your updated schema name
+import { PrepGenie } from "@/utils/schema"; // Using your updated schema name
 import { eq } from "drizzle-orm";
 import { Lightbulb } from "lucide-react";
 import Link from "next/link";
@@ -163,8 +163,8 @@ function InterviewPage({ params }) {
     try {
       const result = await db
         .select()
-        .from(Stance)
-        .where(eq(Stance.mockId, interviewId));
+        .from(PrepGenie)
+        .where(eq(PrepGenie.mockId, interviewId));
 
       if (result.length > 0) {
         setInterviewData(result[0]);

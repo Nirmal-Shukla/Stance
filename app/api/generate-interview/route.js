@@ -1,6 +1,6 @@
 import { chatSession } from "@/utils/GeminiAIModel";
 import { db } from "@/utils/db";
-import { Stance } from "@/utils/schema";
+import { PrepGenie } from "@/utils/schema";
 import { v4 as uuidv4 } from "uuid";
 import { NextResponse } from "next/server";
 import moment from "moment";
@@ -29,7 +29,7 @@ export async function POST(request) {
 
     // Insert into the database
     const resp = await db
-      .insert(Stance)
+      .insert(PrepGenie)
       .values({
         mockId: uuidv4(),
         jsonMockResp: mockJsonResponse,
@@ -39,7 +39,7 @@ export async function POST(request) {
         createdBy: userEmail,
         createdAt: moment().format("DD-MM-yyyy"),
       })
-      .returning({ mockId: Stance.mockId });
+      .returning({ mockId: PrepGenie.mockId });
 
     return NextResponse.json({ mockId: resp[0]?.mockId });
 
